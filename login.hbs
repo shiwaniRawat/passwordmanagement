@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" />
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <title>PasswordManager</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="image/pass.png" type="image/png">
+</head>
+<body>
+  {{>navebar}}
+
+  <div class="hero">
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+                <button type="button" class="toggle-btn" onclick="register()">Register</button>
+            </div>
+        
+         <div class="social-icons">
+                <img src="image/facebook.png">
+                <img src="image/google.png">
+                <img src="image/twitter.png">
+            </div>
+           
+            <form action='/login' methid="POST" id="login" class="input-group">
+                <input type="email" class="input-field" placeholder="Email ID"  >
+                <input type="password" class="input-field" placeholder="Password" >
+                <!-- <input type="checkbox" class="check-box"><span>Remember Password</span> -->
+                <button type="submit" class="submit-btn">Log In</button>
+            </form>
+            <form  action="/register" method="POST" id="register" class="input-group" name="email">
+                <input type="text" class="input-field" placeholder="User Id" name="userId" name="password">
+
+                <input type="email" class="input-field" placeholder="Email ID" name="email" >
+                <input type="text" class="input-field" placeholder="Password" name="password">
+                <input type="text" class="input-field" placeholder="Conform Password" name="confirmpassword" >
+
+                <!-- <input type="checkbox" class="check-box"><span>Remember Password</span> -->
+                <button type="submit" class="submit-btn">Register</button>
+            </form>
+        </div>
+        
+    </div>
+    <script>
+        var x=document.getElementById("login");
+        var y=document.getElementById("register");
+        var z=document.getElementById("btn");
+
+        function register(){
+            x.style.left="-400px";
+            y.style.left="50px";
+            z.style.left="110px";
+        }
+        function login(){
+            x.style.left="50px";
+            y.style.left="450px";
+            z.style.left="0";
+        }
+    </script>
+    
+</body>
+</html>
