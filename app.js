@@ -52,6 +52,23 @@ app.get("/register", (req,res)=>{
     res.render('register')
 })
 
+app.post("/login",async(req,res)=>{
+    try{
+        const email=req.body.email;
+        const password=req.body.password;
+
+        const useremail= await Com.findOne({email:email});
+        res.send(useremail);
+        console.log(useremail);
+        // console.log(`${email} and password is ${password}`)
+
+    }catch(error){
+        res.status(400).send("invalid email")
+
+    }
+    
+})
+
 // create new user in db
 app.post("/register", async(req,res)=>{
     try{
